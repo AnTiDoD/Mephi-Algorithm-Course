@@ -1,38 +1,17 @@
-﻿#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+﻿#include <iostream>
+#include <string>
+using namespace std;
 
-int _tmain()
+int main()
 {
-	FILE* f;
-	if ((f=fopen("input.txt","rt"))==NULL)
-	{
-		perror("input.txt");
-		return 1;
-	}
-	//узнаём размер строки
-	int size;
-
-	fseek(f, 0, SEEK_END);
-	size = ftell(f);
-	fseek(f, 0, SEEK_SET);
-
-	//выделяем место под слово
-	char* word = (char*)malloc(size+1);	// +2 для null-байта
-	if (word==NULL)
-	{
-		return 2;
-	}
-	fgets(word,size+1,f);
-	fclose(f);
-	
-	//проверяем на палиндром
-	f=fopen("output.txt","wt");
+	string word;
+	cin >> word;
+		
 	int n,i;
-	for (i=0, n=strlen(word)-1; i<n && word[i]==word[n]; i++,n--);
-	fprintf(f,"%s",(i>=n)?"yes":"no");
-	free(word);
-	fclose(f);
+	for (i=0, n=word.length()-1; i<n && word[i]==word[n]; i++,n--);
+	if (i>=n)
+		cout << "yes";
+	else
+		cout<< "no";	
 	return 0;
 }
-
