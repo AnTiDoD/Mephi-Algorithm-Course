@@ -1,32 +1,25 @@
-﻿#include <stdio.h>
+﻿#include <iostream>
+#include <string>
+using namespace std;
 
 int main()
-{
-	FILE* f;
-
-	if ((f=fopen("input.txt","rt"))==NULL)
-	{
-		perror("input.txt");
-		return 1;
-	}
-	
-	int n; //количество учащихся
-	fscanf(f,"%d",&n);
+{	
+	int n; //count students
+	cin >> n;
 	
 	int sum_m=0, sum_f=0,sum_i=0;
 	for(int i=0;i<n;i++)
 	{
 		int m,fiz,in;
-		fscanf(f,"%*s%*s%d%d%d",&m,&fiz,&in);	//m - математика, fiz - физика, in - информатика
+		string temp;
+		cin >> temp >> temp >> m >> fiz >> in; //m - mathematics, fiz - physics, in - informatics
 		sum_m+=m;
 		sum_f+=fiz;
 		sum_i+=in;
 	}
-	fclose(f);
-	f=fopen("output.txt","wt");
-	fprintf(f,"%.2f %.2f %.2f",(double)sum_m/n,(double)sum_f/n,(double)sum_i/n);	
-	fclose(f);
-
+	cout.precision(5);
+	cout << static_cast<double>(sum_m)/n << " "<<
+		static_cast<double>(sum_f)/n << " " <<
+		static_cast<double>(sum_i)/n << endl;
 	return 0;
 }
-
