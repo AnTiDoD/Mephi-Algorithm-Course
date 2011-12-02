@@ -1,4 +1,4 @@
-// Пьяница (реализация на очереди)
+п»ї// РџСЊСЏРЅРёС†Р° (СЂРµР°Р»РёР·Р°С†РёСЏ РЅР° РѕС‡РµСЂРµРґРё)
 
 #include <iostream>
 
@@ -11,7 +11,7 @@ const int MAX_SIZE = 10;
 
 int c_first, c_second, c_botva;
 
-/*Очередь*/
+/*РћС‡РµСЂРµРґСЊ*/
 struct Queue 
 {
 	int elements[MAX_SIZE];
