@@ -9,8 +9,6 @@ using std::endl;
 
 const int MAX_SIZE = 10;
 
-int c_first, c_second, c_botva;
-
 /*Очередь*/
 struct Queue 
 {
@@ -136,6 +134,6 @@ int main()
 	if (q2.Empty())	//win first
 		cout << "first " << i << endl;
 	if(!q1.Empty()&&!q2.Empty())
-		cout << "botva" << " " << i<< endl;			
+		cout << "botva" << endl;			
 	return 0;
 }
